@@ -146,6 +146,21 @@ def profile_page():
         st.success(f"Number of rooms updated to {new_num_rooms}")
 
     # Update Amenities (stored as list)
+    available_amenities = [
+        "WiFi", 
+        "Kitchen", 
+        "Bathtub", 
+        "Balcony",           # <--- 'Balcony' added for debuging
+        "Private entrance",
+        "City skyline view",
+        "Elevator", 
+        "Air conditioning", 
+        "Pets allowed", 
+        "TV", 
+        "Washer", "Dryer", "Heating", "Parking" # added for debugging
+    ]
+
+    # Update Amenities (stored as list)
     # ZUSAMMENFASSUNG ALLER VERWENDETEN AMENITIES ZUR BEHEBUNG DES STREAMLIT EXCEPTION:
     available_amenities = [
         "Kitchen", 
@@ -168,7 +183,6 @@ def profile_page():
     current_amenities = profile_data[username].get("amenities", [])
 
     new_amenities = st.multiselect("Select amenities", available_amenities, default=current_amenities)
-
 
     if st.button("Update Amenities"):
         profile_data[username]["amenities"] = new_amenities
