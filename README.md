@@ -5,29 +5,24 @@ This web application is built using **Streamlit** and provides a range of featur
 ## Project Structure
 
 ```
-WebApp
-├── code/
-│   │
-│   ├── main.py                # Main file that manages routing
-│   ├── home.py                # Home page
-│   ├── login.py               # Login page
-│   ├── pages.                 # Dashboard page
-│   │   ├── airbnb.py          # page for airbnb stuff
-│   │   ├── profile.py         # Profile management and user data
-|   |   ├── renting.py         # page for renting stuff
-|   |   ├── comparison.py      # page to compare renting and airbnb listing options
-|   |   ├── __init__.py        # need, is empty
-│   │   └── __pycache__        # Compiled Python files (auto-generated)
-│   ├── .streamlit/            # Streamlit configuration
-│   │   └── config.toml        # Streamlit config file --> to set theme
-│   ├── __pycache__/           # Compiled Python files (auto-generated)
-│   ├── data/                  # Folder for storing user data and profile
-│   │   ├── profiles.json      # Personal profile data
-│   │   └── users.json         # User authentication data
-│   │   └── paris.geojson      # User authentication data
-│   ├── auth.py                # Authentication handling
-│   ├── utils.py               # Utility functions
-└── README.md                  # Project documentation (this file)
+WebApp (Root Directory)
+├── code/                          # Main Application Logic Folder (CWD for Streamlit Cloud)
+│   ├── main.py                    # Main file that manages routing
+│   ├── home.py                    # Home page
+│   ├── login.py                   # Login handling
+│   ├── computations.py            # ML Model predictions and KPI logic
+│   ├── pages/                     # Dashboard pages
+│   │   ├── airbnb_page.py         # Primary price predictor
+│   │   ├── renting_page.py        # Rent prediction
+│   │   ├── comparison.py          # Strategy comparison
+│   │   └── profile.py             # User profile updates
+│   ├── data/                      # CRITICAL DATA (Accessed via path: 'code/data/___')
+│   │   ├── profiles.json          # User profiles and login data
+│   │   └── paris.geojson          # GeoJSON data for map visualization
+│   ├── ml_models/                 # Machine Learning Models (.sav files)
+│   └── .streamlit/                # Streamlit configuration for dark theme
+├── images/                        # Application assets
+└── requirements.txt               # Project dependencies
 ```
 
 ## Setup Instructions
