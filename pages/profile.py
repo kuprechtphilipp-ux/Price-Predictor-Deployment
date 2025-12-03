@@ -104,7 +104,20 @@ def profile_page():
 
         # --- C. RENTING & AMENITIES ---
         st.markdown("##### Amenities & Renting Status")
-        available_amenities = ["Kitchen", "WiFi", "Bathtub", "Elevator", "Air conditioning", "Pets allowed", "TV", "Private entrance", "Balcony", "City skyline view"]
+        available_amenities = [
+        "WiFi", 
+        "Kitchen", 
+        "Bathtub", 
+        "Balcony",           # <--- 'Balcony' added for debuging
+        "Private entrance",
+        "City skyline view",
+        "Elevator", 
+        "Air conditioning", 
+        "Pets allowed", 
+        "TV", 
+        "Washer", "Dryer", "Heating", "Parking" # added for debugging
+        ]
+        
         new_amenities = st.multiselect("Amenities", available_amenities, default=user_data.get("amenities", []))
 
         # Renting Status
